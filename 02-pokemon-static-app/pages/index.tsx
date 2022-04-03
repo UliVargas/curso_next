@@ -1,14 +1,13 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { Button } from '@nextui-org/react'
+import { MainLayout } from '../components/layouts'
 
-const Home: NextPage = () => {
+const HomePage: NextPage = () => {
   return (
-    <div className={styles.container}>
-
-    </div>
+    <MainLayout>
+      <Button color={'warning'}>Hola mundo</Button>
+    </MainLayout>
   )
 }
 
-export default Home
+export default HomePage
