@@ -1,19 +1,25 @@
 import { FC } from 'react'
 import Head from 'next/head'
+import { Navbar } from '../ui'
 
-export const MainLayout: FC = ({ children }) => {
+interface Props {
+  title?: string
+}
+
+export const MainLayout: FC<Props> = ({ children, title }) => {
   return (
     <>
       <Head>
-        <title>Pokemon App</title>
+        <title>{title || 'Pokemon App'}</title>
         <meta name={'author'} content={'Ulises Vargas'} />
         <meta name={'description'} content={'Información sobre pokémon XXX'} />
         <meta name={'keywords'} content={'XXX, pokemon, pokedex'} />
       </Head>
 
-       {/*Navbar*/}
-
-      <main>
+       <Navbar />
+      <main style={{
+        padding: '0 20px'
+      }}>
         {children}
       </main>
     </>
